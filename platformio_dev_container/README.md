@@ -21,8 +21,10 @@ If you disconnect your USB-device, you will have to run the following command wh
 
 
 
-To stop the development enviornment:
-- `.\STOP.bat` (script not yet made)
+Missing scripts:
+- "STOP.bat" (stop the container, detach and unbind the USB devices)
+- "Installing and configure Docker Desktop". For now you need to configure it correctly to integrate with WSL (check the settings of Docker Desktop).
+
 
 
 
