@@ -8,9 +8,11 @@ How to run this container:
     - Alternatively pull from predefined image in Docker Hub: `docker compose -f docker-compose-from-hub.yml up -d`
 - Access the container with the terminal: `docker compose exec -it devenv /bin/bash`
     - Exit the container terminal: `exit`
+- Stop container(s) with: `docker compose down`
+    - Alternatively with specific `docker-compose`-file: `docker compose -f docker-compose-from-hub.yml down`
 
 
-Run the setup script:
+Run the setup script (NB! **Run as Administrator**):
 - You can run the setup script...
     - from project folder: `.\script_files\RUN.bat`
     - from `script_files`: `.\RUN.bat`
