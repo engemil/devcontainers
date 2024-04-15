@@ -1,0 +1,10 @@
+version: '3'
+services:
+  devenv:
+    image: engemil/ubuntu-embedded-dev-env:latest
+    command: /bin/bash
+    devices:
+      - "/dev/bus/usb/"
+    tty: true
+    #volumes:
+    #  - /dev/bus/usb:/dev/bus/usb
