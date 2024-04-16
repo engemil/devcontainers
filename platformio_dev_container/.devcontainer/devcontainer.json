@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "cont-dev-env-test",
+
+    // Custom made Docker Compose file, related to the Dockerfile
+    "dockerComposeFile": "../docker_files/docker-compose.yml",
+    "service": "devenv",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+    "forwardPorts": [
+		8008
+	],
+
+    "customizations": {
+		"vscode": {
+			"extensions": [
+				"platformio.platformio-ide"
+			]
+		}
+	},
+    
+    "mounts": [
+		"source=/dev/,target=/dev/,type=bind,consistency=consistent"
+	]
+
+	
+}

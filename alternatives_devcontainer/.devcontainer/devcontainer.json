@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "cont-dev-env-test",
+	
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	
+    // Alternative 1: Custom made Docker image on the Docker Hub
+    //"image": "docker.io/engemil/ubuntu-embedded-dev-env:latest"
+    
+    // Alternative 2: Custom made dockerfile
+    //"build": {
+    //    "dockerfile": "Dockerfile"
+    //}
+
+    // Alternative 3: Custom made Docker Compose file, related to the dockerfile
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devenv",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+
+    // Alternative 4: Custom made Docker Compose file, related to the Docker image on the Docker Hub
+    //"dockerComposeFile": "docker-compose-from-hub.yml",
+    //"service": "devenv",
+    //"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+
+}

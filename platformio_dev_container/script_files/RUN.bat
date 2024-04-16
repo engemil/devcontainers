@@ -59,6 +59,10 @@ echo.
 
 call windows-usbipd-usb-to-wsl.bat
 
+
+goto skip_windows_start_container
+REM Instead spin up from a devcontainer
+
 echo.
 echo ================================================================================
 echo Running windows-start-container.bat
@@ -66,3 +70,7 @@ echo ===========================================================================
 echo.
 
 call windows-start-container.bat
+
+:skip_windows_start_container
+
+
