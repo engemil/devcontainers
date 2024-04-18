@@ -1,0 +1,5 @@
+# Ignore all contents inside the build folder
+build/*
+
+# Ignare all contents inside the vesc_firmware
+vesc_firmware/*

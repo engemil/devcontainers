@@ -1,0 +1,15 @@
+version: '3'
+services:
+  devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile # The path to our Dockerfile
+    command: /bin/bash
+    devices:
+      - "/dev/bus/usb/"
+    tty: true
+    volumes:
+      - ..:/workspaces:cached # To be able to spin up from devcontainers # Wierd build message: http2: server: error reading preface from client //./pipe/docker_engine: file has already been closed
+      - ../build:/app/bldc/build # After building the firmware, this is where the compiled files ends up
+      - ../vesc_firmware:/app/bldc # The root folder of the firmware files
+    #  - /dev/bus/usb:/dev/bus/usb # Using devices instead

@@ -5,10 +5,10 @@ This repository is meant to hold different types of **Containerized Development 
 
 ## List of CDEs
 
-- Desktop Devcontainer - Minimalistic Desktop with VNC to have a Desktop inside a devcontainer
+- Desktop Devcontainer - Minimalistic Desktop with VNC to have a Desktop inside a devcontainer.
 - Alternatives Devcontainer - Different ways to spin up a devcontainer from an image, dockerfile or docker compose file.
-- PlatformIO DevContainer - Devcontainer with PlatformIO extension
-- 
+- PlatformIO DevContainer - Devcontainer with PlatformIO extension.
+- VESC Devcontainer - Builds/Compiles VESC Firmware.
 
 
 ## Additional Notes
