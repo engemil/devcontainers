@@ -6,6 +6,7 @@
     // Custom made Docker Compose file, related to the Dockerfile
     "dockerComposeFile": "docker-compose.yml",
     "service": "devenv",
+    "shutdownAction": "none",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     
     "mounts": [
