@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "wireviz-dev-env",
+    
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "wireviz",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"tintinweb.graphviz-interactive-preview",
+				"emeraldwalk.RunOnSave"
+			],
+			"settings": {
+				"emeraldwalk.runonsave": {
+					"commands": [
+						{
+							"match": "\\.yml$",
+							"cmd": "wireviz ${file}"
+						}
+					]
+				}
+			}
+		}
+	}
+
+}

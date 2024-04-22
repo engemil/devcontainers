@@ -1,0 +1,14 @@
+# Ignore everything in build folder
+build/*
+
+# Ignore .gv .tsv .html .png .svg files in examples
+examples/*.tsv
+examples/**/*.tsv
+examples/*.gv
+examples/**/*.gv
+examples/*.html
+examples/**/*.html
+examples/*.png
+examples/**/*.png
+examples/*.svg
+examples/**/*.svg
