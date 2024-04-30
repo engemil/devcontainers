@@ -28,5 +28,11 @@ Missing scripts:
 - "Installing and configure Docker Desktop". For now you need to configure it correctly to integrate with WSL (check the settings of Docker Desktop).
 
 
+## Additional Information
+- When you make a new project in PlatformIO, it missmatches with Windows and Linux folder structure (Windows uses backslash `\` while linux uses forward slash `/`)
+    - Open Terminal and change directory to `~/Documents/PlatformIO` (root in this case)
+    - Make new folder: `mkdir Projects`
+    - Change name/move folder to: `mv 'Projects\myProject' 'Projects/myProject'`
+
 
 
