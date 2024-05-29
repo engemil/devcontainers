@@ -1,0 +1,13 @@
+version: '3'
+services:
+  devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile # The path to our Dockerfile
+    command: /bin/bash
+    devices:
+      - "/dev/bus/usb/"
+    tty: true
+    volumes:
+      - ..:/workspaces:cached # To be able to spin up from devcontainers # Wierd build message: http2: server: error reading preface from client //./pipe/docker_engine: file has already been closed
+    #  - /dev/bus/usb:/dev/bus/usb # Using devices instead
