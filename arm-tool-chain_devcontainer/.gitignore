@@ -1,0 +1,2 @@
+# Ignore all object files inside src_example folder
+src_example/*.o

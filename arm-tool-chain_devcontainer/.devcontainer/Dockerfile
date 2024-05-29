@@ -13,9 +13,11 @@ RUN apt-get update \
 
 # Download the ARM GNU Toolchain
 # Find the newest version from https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+# NB! If this doesn't work, remember to specify the DNS server in Docker daemon config to 8.8.8.8 and 8.8.4.4
 ARG ARM_GNU_PACKAGE_LINK=https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz?rev=e434b9ea4afc4ed7998329566b764309&hash=688C370BF08399033CA9DE3C1CC8CF8E31D8C441
 ARG ARM_GNU_PACKAGE_OUTPUT_FILE_NAME=arm-gnu-toolchain_package.tar.xz
 RUN wget "$ARM_GNU_PACKAGE_LINK" -O $ARM_GNU_PACKAGE_OUTPUT_FILE_NAME
+
 # Unpack it into the /usr/share directory
 RUN tar xf $ARM_GNU_PACKAGE_OUTPUT_FILE_NAME -C /usr/share
 # In my case this generated the following folder /usr/share/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi
