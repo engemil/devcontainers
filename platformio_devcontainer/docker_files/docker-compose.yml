@@ -9,5 +9,5 @@ services:
       - "/dev/bus/usb/"
     tty: true
     volumes:
-      - ../..:/workspaces:cached # To be able to spin up from devcontainers
+      - ..:/workspaces:cached # To be able to spin up from devcontainers
     #  - /dev/bus/usb:/dev/bus/usb # Using devices instead

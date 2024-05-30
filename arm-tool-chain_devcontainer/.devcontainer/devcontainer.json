@@ -10,8 +10,8 @@
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     
     "mounts": [
-		"source=/dev/,target=/dev/,type=bind,consistency=consistent"
-	]
+		  "source=/dev/,target=/dev/,type=bind,consistency=consistent"
+	  ]
 
 	
 }

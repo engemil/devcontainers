@@ -1,2 +1,5 @@
-# Ignore all object files inside src_example folder
+# Ignore all generated files inside src_example folder
 src_example/*.o
+src_example/*.s
+src_example/*.elf
+src_example/*.map
