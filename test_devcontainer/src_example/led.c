@@ -36,10 +36,6 @@ void led_init_all(void)
     led_off(LED_RED);
     led_off(LED_BLUE);
 
-    led_on(LED_GREEN);
-    led_on(LED_ORANGE);
-    led_on(LED_RED);
-    led_on(LED_BLUE);
 
 
 }

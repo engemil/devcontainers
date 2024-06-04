@@ -94,7 +94,7 @@ void task1_handler(void)
 	{
 		//printf("Task1 is executing\n");
 		led_on(LED_GREEN);
-		task_delay(2000);
+		task_delay(1000);
 		led_off(LED_GREEN);
 		task_delay(1000);
 	}

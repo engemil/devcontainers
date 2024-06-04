@@ -6,15 +6,17 @@ FROM ubuntu:latest
 
 # Update packages
 RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install git -y \
     && apt-get install wget -y \
     && apt-get install xz-utils -y \
     && apt-get install make -y \
     && apt-get install usbutils -y \
-    && apt-get install openocd -y \
-    && apt-get install libncurses-dev -y
-# usbutils - To check for the USB connection (Run: lsusb)
+    && apt-get install openocd -y
+    #&& apt-get install libncurses-dev -y
+    # usbutils - To check for the USB connection (Run: lsusb)
 
-# Expose OpenOCD ports
+# Expose ports for OpenOCD and GDB
 # GDB Server Port
 EXPOSE 3333
 # Telnet Server Port
@@ -42,6 +44,7 @@ RUN rm -r $ARM_GNU_PACKAGE_OUTPUT_FILE_NAME
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-g++ /usr/bin/arm-none-eabi-g++
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-gdb /usr/bin/arm-none-eabi-gdb
+#RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-gdb /usr/bin/gdb
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-size /usr/bin/arm-none-eabi-size
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-objcopy /usr/bin/arm-none-eabi-objcopy
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-objdump /usr/bin/arm-none-eabi-objdump
@@ -52,6 +55,32 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libt
 
 
 # Work in progress
+
+#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb
+#RUN dpkg -i libtinfo5_6.4-2_amd64.deb
+#RUN rm -f libtinfo5_6.4-2_amd64.deb
+#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb
+#RUN dpkg -i libncurses5_6.4-2_amd64.deb
+#RUN rm -f libncurses5_6.4-2_amd64.deb
+#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncursesw5_6.4-2_amd64.deb
+#RUN dpkg -i libncursesw5_6.4-2_amd64.deb
+#RUN rm -f libncursesw5_6.4-2_amd64.deb
+#RUN apt install libncurses5 libncursesw5 -y
+#RUN apt list --installed | grep libncurses
+#RUN arm-none-eabi-gdb
+
+#RUN apt-get install python3 -y \
+#    && apt-get install python3-pip -y
+
+#RUN apt-get install python-is-python3 -y
+
+#RUN pip install text_encoding
+
+#RUN export PYTHONHOME=/usr
+#RUN export PYTHONPATH=/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/lib/python3.12/encodings
+
+
+
 # Download and install GDB
 #ARG GDB_VERSION=gdb-14.2
 #RUN wget http://ftp.gnu.org/gnu/gdb/($GDB_VERSION).tar.xz
@@ -64,5 +93,11 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libt
 #RUN make install
 # Or
 #RUN apt-get install gdb -y
+
+
+#RUN mkdir workspaces
+
+WORKDIR /
+
 
 
