@@ -10,7 +10,8 @@ services:
       - "4444:4444" # Telnet Server Port
       - "6666:6666" # TCL Server Port
     devices:
-      - "/dev/bus/usb/"
+      - "/dev/bus/usb/:/dev/bus/usb"
+    privileged: true
     tty: true
     volumes:
       - ..:/workspace:cached # To be able to spin up from devcontainers # Wierd build message: http2: server: error reading preface from client //./pipe/docker_engine: file has already been closed

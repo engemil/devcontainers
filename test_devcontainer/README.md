@@ -28,3 +28,26 @@ To use this I added example files to try out in the `/src`-folder.
 The `src_example` is used as example to test out the functionalities of the ARM Tool Chain.
 
 
+
+
+RANDOM NOTES
+
+
+https://github.com/libusb/libusb/issues/1012
+
+sudo usermod -aG docker $(whoami)
+
+(restart computer
+
+sudo nano /etc/udev/rules.d/docker-usb.rules
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="0666"
+
+ctrl + o
+enter
+ctrl + x
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+
