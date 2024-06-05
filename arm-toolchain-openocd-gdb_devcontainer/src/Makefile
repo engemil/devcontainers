@@ -40,6 +40,11 @@ killopenocd:
 	kill -9 $$(ps aux | grep '[o]penocd' | awk '{print $$2}')
 
 
-#
+# Upload code to MCU
 upload:
 	openocd -s "/usr/share/openocd/scripts" -f "interface/stlink.cfg" -f "target/stm32f4x.cfg" -c "program build/final.elf verify reset exit"
+
+# Open GNU Debugger
+make gdb:
+	gdb
+
