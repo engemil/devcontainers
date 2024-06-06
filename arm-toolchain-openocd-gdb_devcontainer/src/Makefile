@@ -29,8 +29,8 @@ clean:
 	rm -rf build/*.o build/*.elf build/*.map
 
 # 
-load:
-	openocd -f board/st_nucleo_f4.cfg
+openocd:
+	openocd -f interface/stlink.cfg -f board/st_nucleo_f4.cfg
 #openocd -f board/st_nucleo_f4.cfg -f interface/stlink.cfg
 # You find the list of boards for OpenOCD under /usr/share/openocd/scripts/board , in our case it's st_nucleo_f4.cfg
 
@@ -46,5 +46,5 @@ upload:
 
 # Open GNU Debugger
 make gdb:
-	gdb
+	gdb-multiarch ./build/final.elf
 

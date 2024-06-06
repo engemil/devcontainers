@@ -23,6 +23,7 @@ RUN apt-get install usbutils -y
 RUN apt-get install openocd -y
 # gdb - GNU project Debugger. https://packages.ubuntu.com/noble/gdb
 RUN apt-get install gdb -y
+#RUN apt-get install gdb-multiarch -y
 
 # Expose ports for OpenOCD and GDB
 # GDB Server Port

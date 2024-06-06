@@ -38,36 +38,26 @@ The `src_example` is used as example to test out the functionalities of the ARM 
 - Now starts OpenOCD with: `make load`
     - If it gives you an `Address already in use` error, run first: `make killopenocd`
 - Then, open a new terminal and start GNU Debugger: `make gdb`
-    - Run: `target remote localhost:3333` 
+    - Run: `target extended-remote localhost:3333` 
         - In the OpenOCD terminal you can see the following:
             ```
             Info : accepting 'gdb' connection on tcp/3333
-            [stm32f4x.cpu] halted due to debug-request, current mode: Handler HardFault
-            xPSR: 0x01000003 pc: 0x0800065c msp: 0x2001ffd4
-            Info : device id = 0x10016433
-            Info : flash size = 512 KiB
-            Info : flash size = 512 bytes
-            Warn : Prefer GDB command "target extended-remote :3333" instead of "target remote :3333"
-            Info : dropped 'gdb' connection
             ```
-            Which means you uploaded your code to the microcontroller
+            Which means the GDB has connected to openOCD
+    - Lets continue: `monitor reset init`
+    - Flash the firmware to the microcontroller: `monitor flash write_image erase ./build/final.elf`
+    - Reset the monitor, but halt it right away: `monitor reset halt`
+    - To continue the program: `monitor resume`
+        - You'll now see the program running
+    - To reset the board: `monitor reset`
+        - 
+
+
+
+
+
 
 WORK-IN-PROGRESS
-
-- Lets continue: `monitor reset init`
-
-```
-(gdb) monitor reset init
-"monitor" command not supported by this target.
-(gdb) reset init
-Undefined command: "reset".  Try "help".
-(gdb)
-```
-
-
-
-
-RANDOM NOTES
 
 https://github.com/libusb/libusb/issues/1012
 
