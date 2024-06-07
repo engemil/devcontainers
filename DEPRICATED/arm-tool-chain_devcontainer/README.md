@@ -1,5 +1,7 @@
 # ARM Tool Chain Development Container
 
+**DEPRICATED: Because I didn't want to spend to much time to compile everything while the container is being built. Made a simpler version using already existing packages.**
+
 This devcontainer contains:
 - `arm-none-eabi` version (GCC 13.2) 13.2.Rel1 (October 30, 2023)
 - `make`

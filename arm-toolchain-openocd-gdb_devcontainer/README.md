@@ -4,6 +4,9 @@ This devcontainer contains:
 - `arm-none-eabi` version (GCC 13.2) 13.2.Rel1 (October 30, 2023)
 - `make`
 
+Scripts:
+- `RUN_LINUX.sh` - Installs docker correctly for conecting USB peripheral(s) to container.
+- `RUN_WIN.bat` - Connects USB peripheral(s) to container. Sets up usbipd, starts docker, and connects usbipd to WSL.
 
 
 **Note 1**: Might be possible to connect a (STLink SWD) Debugger to the container to upload from the container itself. For Windows, will need to use **usbipd-win** to connect the debugger to the container. Check the `platformio_devcontainer` for inspiration.
@@ -57,22 +60,4 @@ The `src_example` is used as example to test out the functionalities of the ARM 
 
 
 
-WORK-IN-PROGRESS
-
-https://github.com/libusb/libusb/issues/1012
-
-sudo usermod -aG docker $(whoami)
-
-(restart computer
-
-sudo nano /etc/udev/rules.d/docker-usb.rules
-
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="0666"
-
-ctrl + o
-enter
-ctrl + x
-
-sudo udevadm control --reload-rules
-sudo udevadm trigger
 
