@@ -25,6 +25,18 @@ EXPOSE 4444
 EXPOSE 6666
 
 
+# Download, install and Build python3.8 (for arm-none-eabi-gdb)
+RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+RUN wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz
+RUN tar -xf Python-3.8.12.tgz
+RUN tar -xf 
+RUN rm -r Python-3.8.12.tgz
+RUN cd Python-3.8.12
+RUN ./configure --enable-optimizations --prefix=/usr/local
+RUN make -j $(nproc)
+RUN make altinstall
+
+
 # Download the ARM GNU Toolchain
 # Find the newest version from https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 # NB! If this doesn't work, remember to specify the DNS server in Docker daemon config to 8.8.8.8 and 8.8.4.4
@@ -51,23 +63,12 @@ RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-objdump /usr/bin/arm-
 RUN ln -s /usr/share/arm-gnu-toolchain-*/bin/arm-none-eabi-nm /usr/bin/arm-none-eabi-nm
 # Dependencies
 RUN ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/x86_64-linux-gnu/libncurses.so.5
+RUN ln -s /usr/lib/x86_64-linux-gnu/libncursesw.so.6 /usr/lib/x86_64-linux-gnu/libncursesw.so.5
 RUN ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libtinfo.so.5
 
 
-# Work in progress
 
-#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb
-#RUN dpkg -i libtinfo5_6.4-2_amd64.deb
-#RUN rm -f libtinfo5_6.4-2_amd64.deb
-#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb
-#RUN dpkg -i libncurses5_6.4-2_amd64.deb
-#RUN rm -f libncurses5_6.4-2_amd64.deb
-#RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncursesw5_6.4-2_amd64.deb
-#RUN dpkg -i libncursesw5_6.4-2_amd64.deb
-#RUN rm -f libncursesw5_6.4-2_amd64.deb
-#RUN apt install libncurses5 libncursesw5 -y
-#RUN apt list --installed | grep libncurses
-#RUN arm-none-eabi-gdb
+# Work in progress
 
 #RUN apt-get install python3 -y \
 #    && apt-get install python3-pip -y
