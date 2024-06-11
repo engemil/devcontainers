@@ -46,5 +46,5 @@ upload:
 
 # Open GNU Debugger
 make gdb:
-	gdb-multiarch ./build/final.elf
+	arm-none-eabi-gdb ./build/final.elf
 

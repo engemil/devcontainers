@@ -10,7 +10,7 @@ This repository is meant to hold different types of **Containerized Development 
 - PlatformIO - Devcontainer with PlatformIO extension.
 - VESC - Builds/Compiles VESC Firmware.
 - WireViz - Generating cable(s), wiring harnesse(s) and connector pinout documents (code-to-image)
-- ARM Toolchain OpenOCD and GDB - Build/Compile/Upload/Debug code for ARM chips (e.g. STM32F401RE)
+- STM32, ARM Toolchain LibOpenCM3, OpenOCD and GDB - Build/Compile/Upload/Debug code for ARM chips (e.g. STM32F401RE)
 
 
 ## Additional Notes

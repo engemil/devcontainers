@@ -1,2 +1,3 @@
 # Ignore all generated files inside build-folder
 build/*
+src/Python*
