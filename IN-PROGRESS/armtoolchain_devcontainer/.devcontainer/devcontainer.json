@@ -1,0 +1,17 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "test-dev-env",
+
+    // Custom made Docker Compose file, related to the Dockerfile
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devenv",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace",
+    
+    "mounts": [
+		  "source=/dev/,target=/dev/,type=bind,consistency=consistent"
+	  ]
+
+	
+}
