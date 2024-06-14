@@ -12,6 +12,9 @@ This repository is meant to hold different types of **Containerized Development 
 - WireViz - Generating cable(s), wiring harnesse(s) and connector pinout documents (code-to-image)
 - STM32, ARM Toolchain LibOpenCM3, OpenOCD and GDB - Build/Compile/Upload/Debug code for ARM chips (e.g. STM32F401RE)
 
+In-Progress:
+- armtoolchain - Trying to build the ARM Toolchain from official webpage
+- STM32Cube - Trying to make STM32 extensions (VS Code) to integrate with the necessary tools.
 
 ## Additional Notes
 

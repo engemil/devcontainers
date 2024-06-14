@@ -1,0 +1,14 @@
+version: '3'
+services:
+  devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile # The path to our Dockerfile
+    command: /bin/bash
+    devices:
+      - "/dev/bus/usb/:/dev/bus/usb"
+    privileged: true
+    tty: true
+    volumes:
+      - ..:/workspace:cached # To be able to spin up from devcontainers
+    #  - /dev/bus/usb:/dev/bus/usb # Using devices instead
