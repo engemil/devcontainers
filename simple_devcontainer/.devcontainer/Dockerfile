@@ -2,4 +2,4 @@
 FROM ubuntu:latest
 
 # update packages and install python
-RUN apt-get update 
+RUN apt-get update
