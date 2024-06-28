@@ -1,0 +1,8 @@
+services:
+  devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile # The path to our Dockerfile
+    command: /bin/bash
+    volumes:
+      - ..:/workspace:cached # To be able to spin up from devcontainers
