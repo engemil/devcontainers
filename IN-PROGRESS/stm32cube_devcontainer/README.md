@@ -2,10 +2,12 @@
 
 (WORK-IN-PROGRESS)
 
+- Need to test this devcontainer by making a simple project, build and flash a micrcontroller.
 
-TODO:
+Note: So far I've managed to install stm32cubeCLT, and to build a blank project.
 
-- Get wget to work with mega.nz or alternative file share solution
-- Unpack and install the tools
-- Point to the tools in the settings for STM32Cube in devcontainer.json settings.
-- Test it
+
+## Useful links:
+
+- How to create projects using STM32 VS Code Extension: https://www.youtube.com/watch?v=DDVdq47Dd94
+
