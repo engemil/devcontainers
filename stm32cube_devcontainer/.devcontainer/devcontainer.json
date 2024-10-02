@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "test-devcontainer",
+
+    // Custom made Docker Compose file, related to the Dockerfile
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devenv",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace",
+    
+    "mounts": [
+		  "source=/dev/,target=/dev/,type=bind,consistency=consistent"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"stmicroelectronics.stm32-vscode-extension",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack"
+			],
+            "settings": {
+                "STM32VSCodeExtension.projectCreator.executablePath": "/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX",
+                "STM32VSCodeExtension.productFinder.executablePath": "/usr/local/STMicroelectronics/STMCUFinder/STMCUFinder",
+                "STM32VSCodeExtension.cubeCLT.path": "/opt/st/stm32cubeclt_1.16.0",
+				"cmake.options.statusBarVisibility": "visible",
+				"cmake.options.advanced": {
+					
+					"build": {
+						"statusBarVisibility": "inherit",
+						"inheritDefault": "visible"
+					},
+					"launch": {
+						"statusBarVisibility": "inherit",
+						"inheritDefault": "visible"
+					},
+					"debug": {
+						"statusBarVisibility": "inherit",
+						"inheritDefault": "visible"
+					}
+				}
+            }
+		}
+	}
+
+	
+}

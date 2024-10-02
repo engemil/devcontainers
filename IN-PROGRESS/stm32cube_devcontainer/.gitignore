@@ -1,9 +1,0 @@
-# Ignore files
-
-en.stm32cubemx-lin*
-en.st-mcu-finderlin*
-en.st-stm32cubeclt*
-stm32cubemx/
-stmMCUfinder/
-stm32cubeclt/
-

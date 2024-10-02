@@ -5,8 +5,8 @@ This repository is meant to hold different types of **Containerized Development 
 
 ## List of CDEs
 
+- STM32Cube - STM32 extension fitted into a devcontainer. (NB! Best example of devcontainer configuration setup so far).
 - Desktop - Minimalistic Desktop with VNC to have a Desktop inside a devcontainer.
-- Alternatives - Different ways to spin up a devcontainer from an image, dockerfile or docker compose file.
 - PlatformIO - Devcontainer with PlatformIO extension.
 - VESC - Builds/Compiles VESC Firmware.
 - WireViz - Generating cable(s), wiring harnesse(s) and connector pinout documents (code-to-image)
@@ -14,7 +14,7 @@ This repository is meant to hold different types of **Containerized Development 
 
 In-Progress:
 - armtoolchain - Trying to build the ARM Toolchain from official webpage
-- STM32Cube - Trying to make STM32 extensions (VS Code) to integrate with the necessary tools.
+
 
 ## Additional Notes
 
