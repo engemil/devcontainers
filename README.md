@@ -11,6 +11,7 @@ This repository is meant to hold different types of **Containerized Development 
 - VESC - Builds/Compiles VESC Firmware.
 - WireViz - Generating cable(s), wiring harnesse(s) and connector pinout documents (code-to-image)
 - STM32, ARM Toolchain LibOpenCM3, OpenOCD and GDB - Build/Compile/Upload/Debug code for ARM chips (e.g. STM32F401RE)
+- ChibiOS Dev - Example development environment for ChibiOS (e.g. STM32F401RE NUCLEO board)
 
 In-Progress:
 - armtoolchain - Trying to build the ARM Toolchain from official webpage
