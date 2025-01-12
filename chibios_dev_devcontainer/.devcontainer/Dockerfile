@@ -11,15 +11,15 @@ RUN apt-get install git -y
 # gcc-arm-none-eabi - Arm GNU Toolchain. Includes libnewlib aswell. https://packages.ubuntu.com/noble/gcc-arm-none-eabi
 # TODO: See if I should use the gcc-arm-none-eabi that ChibiStudio includes under tools (2 versions: 10.3.1 2021q4, 11.3.1 2022q3)
 # The newest one as of 19.12.2024 is now 13.2.1 20231009
-#RUN apt-get install gcc-arm-none-eabi -y
+RUN apt-get install gcc-arm-none-eabi -y
 # usbutils - To check for the USB connection (Run: lsusb). https://packages.ubuntu.com/noble/usbutils
-#RUN apt-get install usbutils -y 
+RUN apt-get install usbutils -y 
 # make - Compile C files. https://packages.ubuntu.com/noble/make
-#RUN apt-get install make -y 
+RUN apt-get install make -y 
 # openocd - Open On-chip Debugger. https://packages.ubuntu.com/noble/openocd
-#RUN apt-get install openocd -y
+RUN apt-get install openocd -y
 # gdb - GNU project Debugger. https://packages.ubuntu.com/noble/gdb
-#RUN apt-get install gdb-multiarch -y
+RUN apt-get install gdb-multiarch -y
 
 # Expose ports for OpenOCD
 # GDB Server Port
